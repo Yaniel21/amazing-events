@@ -37,15 +37,21 @@ font-family: 'Rubik', sans-serif;*/
 .font-title{
 	font-family: 'Istok Web', sans-serif !important;
 	font-weight: 600 !important;
-	font-size: 25px !important;	
+	font-size: 20px !important;	
+	text-align: center !important;
 }
 
 .font-paragraph{
+/* 	display: flex;
+	flex-wrap: nowrap; */
 	font-family: 'Rubik', sans-serif!important;
 	font-weight: 400!important;
-	font-size: 15px!important;    
-	text-align: center;
+	font-size: 15px !important;    
+	text-align: center !important;
+	text-overflow: ellipsis !important;
+	height: 80px !important;
 }
+
 .back-icon{
 	background-color: aliceblue;
 	padding: 2px;
@@ -107,3 +113,10 @@ font-family: 'Rubik', sans-serif;*/
 	#A91B60
 	#DC046C
 */
+
+.tamanioFoto{
+	/* width: ; */
+	height: 100px !important ;
+	object-fit: cover  !important;
+
+}
