@@ -3,7 +3,7 @@ let template = (foto,titulo,descripcion,precio) => {
 <div class="col">
 <div class="card shadow-sm">
 			<figure class="figure">
-					<img src="${foto}" alt="" class="bd-placeholder-img card-img-top">
+					<img src="${foto}" alt="${titulo}"  class="bd-placeholder-img card-img-top tamanioFoto">
 	</figure>
 <div class="card-body">
 		<h1 class="d-flex flex-wrap justify-content-center font-title">${titulo}</h1>
@@ -18,3 +18,4 @@ let template = (foto,titulo,descripcion,precio) => {
 </div>
 </div>`;
 }
+//Modificaciones

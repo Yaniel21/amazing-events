@@ -19,4 +19,5 @@ function printUpcomingEvents() {
 	let tarjeta = document.getElementById("upcomingEvents");
 	tarjeta.innerHTML = templates.join("");
 }
-printUpcomingEvents();
+printUpcomingEvents(); 
+//Modificaciones
