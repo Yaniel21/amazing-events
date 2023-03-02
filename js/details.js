@@ -46,7 +46,7 @@ const detalle = informacion.find(each => each._id == id)
 const contenedorDetalle = document.querySelector("#tarjetaDetalle")
 
 contenedorDetalle.innerHTML =  `
-	<div class="row flex-lg-row-reverse align-items-center g-2 py-2">
+	<div class="row flex-lg-row-reverse align-items-center g-2 py-2 bounceIn">
 	<div class="col-12  col-lg-6  align-items-center">
 		<img src="${detalle.image}" class="d-block mx-lg-auto img-fluid sombreado" alt="${detalle.name}"
 			width="700" height="500" loading="lazy">

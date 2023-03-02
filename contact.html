@@ -173,26 +173,24 @@
 		<!-- * seccion de contacto  -->
 		<div class="album py-5 back-cards">
 			<div class="container-sm w-50">
-				<form>
+				<form action="" method="get">
 					<h1 class="h3 mb-4 fw-normal">Please contact us</h1>
-					<div class="form-floating input-group mb-3">
-						<input type="text" class="form-control" id="floating-name" placeholder="Name">
-						<label for="floating-name">Name</label>
+					<div class="form-floating input-group mb-2">
+					<input type="text" class="form-control" id="nameContact" name="Nombre">
+						<label for="nameContact">Name</label>
 					</div>
 
 					<div class="form-floating input-group mb-3">
-						<input type="email" class="form-control" id="floating-mail" placeholder="Email">
-						<label for="floating-mail" class="input-group-text">Email Address</label>
+						<input type="email" class="form-control" id="emailContact" placeholder="Email" name="Email">
+						<label for="emailContact">Email</label>
 					</div>
 						
-					  	
-
-					<div class="input-group input-group mb-3">
+					<div class="input-group input-group mb-4">
 						<span class="input-group-text">Message</span>
-						<textarea class="form-control" aria-label="With textarea"></textarea>
+						<textarea class="form-control" aria-label="With textarea" id="textContact" name="Area-texto"></textarea>
 					  </div>
 					 
-					<button class="w-100 button-color m-2 p-2 font-icon-white" type="submit">Send</button>
+					<button class="w-100 button-color m-2 p-2 font-icon-white" type="submit" id="form-button">Send</button>
 				  </form>
 
 			</div>
@@ -228,6 +226,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
 	crossorigin="anonymous"></script>
+	<script src="./js/contact.js"></script>
 </body>
 
 </html>
