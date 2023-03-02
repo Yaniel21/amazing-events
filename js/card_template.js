@@ -1,4 +1,4 @@
-let template = (foto,titulo,descripcion,precio) => {
+let template = (id,foto,titulo,descripcion,precio) => {
 	return	`
 <div class="col">
 <div class="card shadow-sm">
@@ -11,7 +11,7 @@ let template = (foto,titulo,descripcion,precio) => {
 		<div class="d-flex justify-content-between align-items-center">
 			<small class="text-muted fs-6">Price $${precio}</small>
 			<div class="button-color">
-				<a href="./details.html" class="nav-link btn btn-sm text-light button-color">See more</a>
+				<a href="./details.html?id=${id}" class="nav-link btn btn-sm text-light button-color">Ver mas</a>
 			</div>
 		</div>
 	</div>

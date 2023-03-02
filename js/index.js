@@ -10,7 +10,7 @@ function createTemplate() {
 		//cada uno de los elementos del array de eventos es un objeto
 				console.log(one)
 		//se debe guardar cada card  en un array que luego se imprimira en el DOM
-				templates.push(template(one.image, one.name, one.description, one.price))
+				templates.push(template( one._id ,one.image, one.name, one.description, one.price))
 		}
 	console.log(templates)
 

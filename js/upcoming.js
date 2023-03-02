@@ -8,6 +8,7 @@ function printUpcomingEvents() {
 			//template(element.image, element.name,element.description,element.price )
 			templates.push(
 				template(
+					element._id,
 					element.image,
 					element.name,
 					element.description,

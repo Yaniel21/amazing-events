@@ -5,7 +5,7 @@ function printPastEvents() {
 
 	for(let elemento of events){
 		if(elemento.date < currentDate){
-				templates.push(template(elemento.image,elemento.name,elemento.description,elemento.price));
+				templates.push(template(elemento._id,elemento.image,elemento.name,elemento.description,elemento.price));
 		}
 	}
 	let cardPast = document.getElementById("pastCard");
