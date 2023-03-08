@@ -16,7 +16,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&family=Rubik:wght@400;600&display=swap"
 		rel="stylesheet">
-	
+
 	<!-- *icono del sitio web -->
 	<link rel="shortcut icon" href="./assets/img/ico.ico">
 	<title>Contact</title>
@@ -135,38 +135,9 @@
 				<span class="visually-hidden">Next</span>
 			</button>
 		</div>
-		<!-- Fin de carrousel -->
-		<!-- *inicio de barra de busqueda con los filtros en checkbox -->
-
+		<!--* Fin de carrousel -->
 		<div class="navbar navbar-expand-lg  bg-ligth fondo-categorys">
 			<div class="container-xl d-flex flex-wrap justify-content-center-sm">
-				<form>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Category">
-						<label class="form-check-label color-icon font-category" for="inlineCheckbox1">Category</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Category">
-						<label class="form-check-label color-icon font-category" for="inlineCheckbox2">Category</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Category">
-						<label class="form-check-label color-icon font-category" for="inlineCheckbox3">Category</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Category">
-						<label class="form-check-label color-icon font-category" for="inlineCheckbox4">Category</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Category">
-						<label class="form-check-label color-icon font-category" for="inlineCheckbox5">Category</label>
-					</div>
-				</form>
-				<!-- *Barra de busqueda -->
-
-				<form role="search">
-					<input class="form-control color-icon font-category" type="search" placeholder="Search">
-				</form>
 			</div>
 		</div>
 
@@ -176,23 +147,42 @@
 				<form action="" method="get">
 					<h1 class="h3 mb-4 fw-normal">Please contact us</h1>
 					<div class="form-floating input-group mb-2">
-					<input type="text" class="form-control" id="nameContact" name="Nombre">
+						<input type="text" class="form-control" id="nameContact" name="nombre">
 						<label for="nameContact">Name</label>
 					</div>
 
 					<div class="form-floating input-group mb-3">
-						<input type="email" class="form-control" id="emailContact" placeholder="Email" name="Email">
+						<input type="email" class="form-control" id="emailContact" placeholder="Email" name="email">
 						<label for="emailContact">Email</label>
 					</div>
-						
+
 					<div class="input-group input-group mb-4">
 						<span class="input-group-text">Message</span>
-						<textarea class="form-control" aria-label="With textarea" id="textContact" name="Area-texto"></textarea>
-					  </div>
-					 
-					<button class="w-100 button-color m-2 p-2 font-icon-white" type="submit" id="form-button">Send</button>
-				  </form>
+						<textarea class="form-control" aria-label="With textarea" id="textContact"
+							name="texto"></textarea>
+					</div>
 
+<!-- 					<button class="w-100 button-color m-2 p-2 font-icon-white" type="submit"
+						>Send</button> -->
+						<button type="submit" class="w-100 button-color m-2 p-2 font-icon-white" id="form-button"data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+							Send
+						  </button>	
+						  <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog">
+							  <div class="modal-content">
+								<div class="modal-header">
+								  <h5 class="modal-title" id="staticBackdropLabel">The information has been sent correctly </h5>
+								  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body" id="contenedorNombre">
+
+								</div>
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
 			</div>
 		</div>
 
@@ -224,8 +214,8 @@
 		</footer>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-	crossorigin="anonymous"></script>
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
 	<script src="./js/contact.js"></script>
 </body>
 

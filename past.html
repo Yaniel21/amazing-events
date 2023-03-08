@@ -100,7 +100,6 @@
 	</header>
 	<main>
 		<!-- *Inicio carrousel -->
-
 		<div id="carouselExampleIndicators" class="carousel slide carousel-fade">
 			<div class="carousel-indicators">
 				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -135,52 +134,35 @@
 				<span class="visually-hidden">Next</span>
 			</button>
 		</div>
-		<!-- Fin de carrousel -->
+		<!-- * Fin de carrousel -->
 		<!-- *inicio de barra de busqueda con los filtros en checkbox -->
 
-		<div class="navbar navbar-expand-lg  bg-ligth fondo-categorys">
-			<div class="container-xl d-flex flex-wrap justify-content-center-sm">
-				<form>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Category">
-						<label class="form-check-label color-icon font-category" for="inlineCheckbox1">Category</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Category">
-						<label class="form-check-label color-icon font-category" for="inlineCheckbox2">Category</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Category">
-						<label class="form-check-label color-icon font-category" for="inlineCheckbox3">Category</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Category">
-						<label class="form-check-label color-icon font-category" for="inlineCheckbox4">Category</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Category">
-						<label class="form-check-label color-icon font-category" for="inlineCheckbox5">Category</label>
-					</div>
-				</form>
-				<!-- *Barra de busqueda -->
+<!-- & inicio de barra de busqueda con los filtros en checkbox -->
+<div class="navbar-text navbar-expand-sm  bg-ligth fondo-categorys" >
+	<div class="container-xl d-flex flex-wrap  justify-content-evenly align-items-center" >
+		<!-- *contenedor que recibe las CATEGORIAS de forma DINAMICA -->
+		<div>
+			<article class="d-flex flex-wrap justify-content-evenly" id="table_checks_past"></article>
+			
+			<article class="d-flex flex-wrap justify-content-evenly" id="table_container_past"></article>
 
-				<form role="search">
-					<input class="form-control color-icon font-category" type="search" placeholder="Search">
-				</form>
+		</div>
+	</div>
+</div>
+<!-- * seccion de eventos  -->
+<div class="album py-5 back-cards">
+	<div class="container">
+		<!-- <article class="d-flex flex-wrap justify-content-evenly" id="resultado_busqueda"></article> -->
+		<article class="row row-cols-1 row-cols-sm-4 row-cols-md-4 g-4" id="resultado_busqueda_past"></article>
+		<!-- *genera  EVENTOS de forma dinamica con los checks de búsqueda -->
+				<!-- * seccion de eventos  -->
+		<div class="row row-cols-1 row-cols-sm-4 row-cols-md-4 g-4" id="pastCard">
+			<!-- *genera  EVENTOS de forma dinamica -->
 			</div>
 		</div>
-
-		<!-- * seccion de eventos  -->
-		<div class="album py-5 back-cards">
-			<div class="container">
-
-				<div class="row row-cols-1 row-cols-sm-4 row-cols-md-4 g-4" id="pastCard">
-
-				</div>
-			</div>
-		</div>
-
-	</main>
+	</div>
+</div>
+</main>
 
 	<!-- *footer -->
 	<div class="container-fluid footer-fondo">
@@ -213,6 +195,7 @@
 
 	<script src="./js/data_ae_1.js"></script>
 	<script src="./js/card_template.js"></script>
+	<script src="./js/past_categorys.js"></script>
 	<script src="./js/past.js"></script>
 </body>
 </html>

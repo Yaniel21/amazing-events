@@ -222,3 +222,11 @@ font-family: 'Rubik', sans-serif;*/
 	transform: scale3d(1, 1, 1);
 	}
 	} 
+
+.margin-search{
+	margin: 5px !important;
+	border: none;
+	border-radius: 5px !important;
+	text-align: right;
+	margin-right: 2px !important;
+}

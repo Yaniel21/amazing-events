@@ -1,4 +1,5 @@
 //version para traer las categorias de forma dinamica
+
 let eventos = datos.events 
 let categorias = [] //categorias
 eventos.forEach(each => {
@@ -22,7 +23,7 @@ function printChecks(id_etiqueta, array_categoria) {
 	array_categoria.push(`<input onkeyup="captureData()" id="id_search" class="justify-content-end color-icon font-category margin-search" type="text" name="texto" placeholder="search">`)
 	container.innerHTML = array_categoria.join("")
 }
-printChecks('#table_checks',categorias)
+printChecks('#table_checks_past',categorias)
 
 function printTemplates(id_etiqueta,filtro) {
     let container = document.querySelector(id_etiqueta) 
@@ -42,24 +43,26 @@ function printTemplates(id_etiqueta,filtro) {
 function captureData() {
     let texto = document.getElementById('id_search').value
     let checks = Array.from(document.querySelectorAll('.class_checks:checked')).map(each => each.value)
-    let contenedorGeneral = document.getElementById("cardContainer")
-    let contenedorBusqueda = document.getElementById("resultado_busqueda")
+	let currentDate = datos.currentDate;
+	
+    let contenedorGeneral = document.getElementById("pastCard")
+    let contenedorBusqueda = document.getElementById("resultado_busqueda_past")
     if (texto != "" || checks.length > 0) {
         //console.log(texto)
         //console.log(checks)
         let filtro = eventos.filter(each => {
             return (
                 each.name.includes(texto)) 
-                && (checks.length === 0 || checks.includes(each.category))
+                && (checks.length === 0 || checks.includes(each.category)) && (each.date < currentDate)
         })
      //console.log(filtro)
         if (filtro.length>0) {
             contenedorGeneral.style.display = "none"
-            printTemplates('#resultado_busqueda',filtro)
+            printTemplates('#resultado_busqueda_past',filtro)
     
         } else {
             contenedorGeneral.style.display = "none"
-            notFound('#resultado_busqueda')
+            notFound('#resultado_busqueda_past')
         }
 
      }else{
@@ -109,5 +112,3 @@ function defineTemplate(filtro) {
     </div>
     </div>`
 }
-
-
