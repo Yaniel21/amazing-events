@@ -62,13 +62,13 @@ async function fetchApi(){
 	try{
 		let urlApi = "https://mindhub-ab35.onrender.com/api/amazing-events"
 		let fetchResponse = await fetch(urlApi)//se espera la respuesta 
-		console.log(fetchResponse)
+		//console.log(fetchResponse)
 	
 		let response = await fetchResponse.json()//se espera la transformación
-		console.log(response)
+		//console.log(response)
 
 		let datos = response.events
-		console.log(datos)
+		//console.log(datos)
 
 		printCards('#cardContainer', datos)
 

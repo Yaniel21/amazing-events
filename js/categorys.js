@@ -1,67 +1,108 @@
-//version para traer las categorias de forma dinamica
-let eventos = datos.events 
-let categorias = [] //categorias
-eventos.forEach(each => {
-    if ( ! categorias.includes(each.category) ) {
-        categorias.push(each.category)
-    }    
-    //console.log(categorias)
-})
+//MODIFICACIONES IMPLEMENTACION DE LA API
+async function fetchApi() {
+    try {
+        let urlApi = "https://mindhub-ab35.onrender.com/api/amazing-events"
+        let fetchResponse = await fetch(urlApi)//se espera la respuesta 
+        console.log(fetchResponse)
+
+        let response = await fetchResponse.json()//se espera la transformación
+        console.log(response)
+
+        let datosApi = response.events
+       console.log(datosApi)
+
+       let resultado1= categoriasFiltradas(datosApi)
+       printChecks('#table_checks', resultado1)
+       
+      
+   return datosApi
+        
+
+    } catch (error) {
+        console.log("ocurrio un error que diosito lo ayude")
+        console.log(error)
+    }
+
+}
+fetchApi()
+
+
+function categoriasFiltradas(categorias) {
+    let categoriasUnicas = []
+    categorias.forEach(each => {
+        if (!categoriasUnicas.includes(each.category)) {
+            categoriasUnicas.push(each.category)
+        }
+        console.log(categoriasUnicas)
+    })
+    return categoriasUnicas
+}
+
+
 
 function printChecks(id_etiqueta, array_categoria) {
-	let container = document.querySelector(id_etiqueta)
-	array_categoria = array_categoria.map(each => {
-		return `
-		<fieldset class="d-inline-flex p-2 bd-highlight">
-		<label class="form-check-label color-icon font-category" for="${each}">${each}</label>
-		<input onclick="captureData()" class="class_checks form-check-input ms-1" type="checkbox" value="${each}" name="tipo" id="${each}">
-		</fieldset>
-	`
-	})
+    let container = document.querySelector(id_etiqueta)
+    array_categoria = array_categoria.map(each => {
+        return `
+        <fieldset class="d-inline-flex p-2 bd-highlight">
+        <label class="form-check-label color-icon font-category" for="${each}">${each}</label>
+        <input onclick="captureData()" class="class_checks form-check-input ms-1" type="checkbox" value="${each}" name="tipo" id="${each}">
+        </fieldset>
+    `
+    }) 
 
-	array_categoria.push(`<input onkeyup="captureData()" id="id_search" class="justify-content-end color-icon font-category margin-search" type="text" name="texto" placeholder="search">`)
+ array_categoria.push(`<input onkeyup="captureData()" id="id_search" class="justify-content-end color-icon font-category margin-search" type="text" name="texto" placeholder="search">`)
 
 
-	container.innerHTML = array_categoria.join("")
+container.innerHTML = array_categoria.join("")
 }
-printChecks('#table_checks',categorias)
+/* printChecks('#table_checks', categoriasUnicas) */
+
 
 function printTemplates(id_etiqueta,filtro) {
-    let container = document.querySelector(id_etiqueta) 
-     /* trae el elemento con ese id */
-     container.innerHTML = ""
+let container = document.querySelector(id_etiqueta) 
+//trae el elemento con ese id 
+ container.innerHTML = ""
     filtro= filtro.map(defineTemplate)
     container.innerHTML = filtro.join('')
 }
 
-//printTemplates(id_etiqueta,filtro)
+/* printTemplates(id_etiqueta,filtro) */
 
 //filtro capture data
 /**
  * @captureData captura los datos de checks checkeados y del input text
  */
 
-function captureData() {
-    let texto = document.getElementById('id_search').value
-    
-    let checks = Array.from(document.querySelectorAll('.class_checks:checked')).map(each => each.value)
+async function captureData() {
 
-    
+    let urlApi = "https://mindhub-ab35.onrender.com/api/amazing-events"
+    let fetchResponse = await fetch(urlApi)//se espera la respuesta 
+    console.log(fetchResponse)
+
+    let response = await fetchResponse.json()//se espera la transformación
+    console.log(response)
+
+
+    let datosApi = response.events
+    let texto = document.getElementById('id_search').value
+
+    let checks = Array.from(document.querySelectorAll('.class_checks:checked')).map(each => each.value)
     let contenedorGeneral = document.getElementById("cardContainer")
     let contenedorBusqueda = document.getElementById("resultado_busqueda")
     if (texto != "" || checks.length > 0) {
         console.log(texto)
         console.log(checks)
-        let filtro = eventos.filter(each => {
+        let filtro =  datosApi.filter(each => {
             return (
-                each.name.includes(texto)) 
+                each.name.includes(texto))
                 && (checks.length === 0 || checks.includes(each.category))
         })
-     //console.log(filtro)
+     console.log(filtro)
         if (filtro.length>0) {
             contenedorGeneral.style.display = "none"
             printTemplates('#resultado_busqueda',filtro)
-    
+
         } else {
             contenedorGeneral.style.display = "none"
             notFound('#resultado_busqueda')
@@ -69,10 +110,10 @@ function captureData() {
 
      }else{
         contenedorGeneral.style.display = "flex"
-        contenedorBusqueda.innerHTML = ""
-     } //operador no es igual
+        contenedorBusqueda.innerHTML = "" 
+     }  
 
-     //   return filtro
+       //return filtro
 }
 
 
@@ -89,7 +130,7 @@ function notFound(id_etiqueta) {
                                                 </div>
                                     </div> 
     `
-}
+} 
 
 /**
  * @defineTemplate define el template de cada card dinamica
@@ -107,12 +148,10 @@ function defineTemplate(filtro) {
             <div class="d-flex justify-content-between align-items-center">
                 <small class="text-muted fs-6">Price $${filtro.price}</small>
                 <div class="button-color">
-                    <a href="./details.html?id=${filtro._id}&nombre=${filtro.name}" class="nav-link btn btn-sm text-light button-color">Ver mas</a>
+                    <a href="./details.html?id=${filtro.id}&nombre=${filtro.name}" class="nav-link btn btn-sm text-light button-color">Ver mas</a>
                 </div>
             </div>
         </div>
     </div>
     </div>`
 }
-
-
