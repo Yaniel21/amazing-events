@@ -20,6 +20,8 @@ function printChecks(id_etiqueta, array_categoria) {
 	})
 
 	array_categoria.push(`<input onkeyup="captureData()" id="id_search" class="justify-content-end color-icon font-category margin-search" type="text" name="texto" placeholder="search">`)
+
+
 	container.innerHTML = array_categoria.join("")
 }
 printChecks('#table_checks',categorias)
@@ -41,12 +43,15 @@ function printTemplates(id_etiqueta,filtro) {
 
 function captureData() {
     let texto = document.getElementById('id_search').value
+    
     let checks = Array.from(document.querySelectorAll('.class_checks:checked')).map(each => each.value)
+
+    
     let contenedorGeneral = document.getElementById("cardContainer")
     let contenedorBusqueda = document.getElementById("resultado_busqueda")
     if (texto != "" || checks.length > 0) {
-        //console.log(texto)
-        //console.log(checks)
+        console.log(texto)
+        console.log(checks)
         let filtro = eventos.filter(each => {
             return (
                 each.name.includes(texto)) 
