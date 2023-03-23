@@ -142,7 +142,7 @@
 		</div>
 		<!-- * seccion para la tabla de estadisticas  -->
 
-		<div class="album py-5 back-cards">
+		<div class="album py-5 back-cards" >
 
 			<div class="container-sm w-80">
 				<article class="my-3">
@@ -150,10 +150,10 @@
 					<!-- *TABLA UNO STATIS -->
 					<div class="bd-example-snippet bd-code-snippet">
 						<div class="bd-example">
-							<table class="table table-bordered border-info table-hover table-dark">
+							<table class="table table-bordered border-info table-hover table-dark text-center">
 								<thead>
 									<tr class="table-style-3">
-										<th scope="col" COLSPAN="3" class="text-uppercase">Events statics</th>
+										<th scope="col" COLSPAN="3" class="text-uppercase text-center">Events statics</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -162,20 +162,10 @@
 										<td>Events width the lowest percentage of attendance</td>
 										<td>Events width larger capacity</td>
 									</tr>
-									<tr class="table-light table-style-3">
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
-									</tr>
-									<tr class="table-info table-style-3">
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
-									</tr>
-									<tr class="table-light table-style-3">
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
+									<tr class="table-light table-style-3 text-center">
+										<td id="tablaMayorAsistencia">...</td>
+										<td id="tablaMenorAsistencia">...</td>
+										<td id="tablaCapacity"></td>
 									</tr>
 								</tbody>
 							</table>
@@ -195,31 +185,18 @@
 							<table class="table table-bordered border-warning table-hover table-dark">
 								<thead>
 									<tr class="table-style-2">
-										<th scope="col" COLSPAN="3" class="text-uppercase">UPCOMING EVENTS STATICS BY
+										<th scope="col" COLSPAN="3" class="text-uppercase text-center">UPCOMING EVENTS STATICS BY
 											CATEGORY</th>
 									</tr>
-								</thead>
-								<tbody>
-									<tr class="table-warning table-style-2">
+									<tr class="text-center">
 										<td>Category</td>
 										<td>Revenues</td>
 										<td>Percentajes of attendance</td>
 									</tr>
-									<tr class="table-light table-style-2">
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
-									</tr>
-									<tr class="table-warning table-style-2">
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
-									</tr>
-									<tr class="table-light table-style-2">
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
-									</tr>
+
+								</thead>
+								<tbody id=UpcomingTabla  class="text-center" >
+									
 								</tbody>
 							</table>
 						</div>
@@ -237,32 +214,18 @@
 							<table class="table table-bordered border-success table-hover table-dark">
 								<thead>
 									<tr class="table-style">
-										<th scope="col" COLSPAN="3" class="text-uppercase">PAST EVENTS STATICS BY
+										<th scope="col" COLSPAN="3" class="text-uppercase text-center">PAST EVENTS STATICS BY
 											CATEGORY
 										</th>
 									</tr>
-								</thead>
-								<tbody>
-									<tr class="table-success table-style">
+									<tr class="table-success table-style text-center">
 										<td>Category</td>
 										<td>Revenues</td>
 										<td>Percentajes of attendance</td>
 									</tr>
-									<tr class="table-light table-style">
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
-									</tr>
-									<tr class="table-success table-style">
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
-									</tr>
-									<tr class="table-light table-style">
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
-									</tr>
+								</thead>
+								<tbody id="tablePast" class="text-center">
+								
 								</tbody>
 							</table>
 						</div>
